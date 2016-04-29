@@ -1,0 +1,26 @@
+{
+  "name": "pascals-triangle",
+  "version": "0.1.0",
+  "description": "Coding problem to use during interviews",
+  "main": "index.js",
+  "bin": {
+    "pascals-triangle": "./bin/pascals-triangle"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "lint": "eslint lib/ spec/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:abaruffa/pascals-triangle.git"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "eslint": "^2.8.0"
+  },
+  "keywords": [
+    "pascal"
+  ],
+  "author": "abaruffa",
+  "license": "MIT"
+}
