@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var Recursive = require('../lib/pascals-triangle/pascals-triangle-recursive'),
+  Memoize = require('../lib/pascals-triangle/pascals-triangle-memoize');
+
+if (process.argv.length < 3 || process.argv.length > 4) {
+  console.log('USAGE: pascals-triangle <n> [method]');
+  process.exit(1);
+}
+
+var rowNumber = process.argv[2],
+  method = process.argv[3] || 'recursive',
+  recursive = new Recursive(),
+  memoize = new Memoize(),
+  startTime, result;
+
+if (isNaN(rowNumber)) {
+  console.log('Second arguments must be a Number');
+  process.exit(1);
+}
+
+if (method === 'recursive') {
+  startTime = Date.now();
+  for (var i = 1; i <= rowNumber; i++) {
+    result = recursive.calculate(i);
+    console.log('Row ' + i + ' = ' + result);
+  }
+  console.log('Duration(ms) = ', Date.now() - startTime);
+}
+
+else if(method === 'memoize') {
+  startTime = Date.now();
+  for (var j = 1; i <= rowNumber; j++) {
+    result = memoize.calculate(j);
+    console.log('Row ' + j + ' = ' + result);
+  }
+  console.log('Duration(ms) = ', Date.now() - startTime);
+}
+
+else {
+  console.log(method + ' is not a supported method.');
+  process.exit(1);
+}
